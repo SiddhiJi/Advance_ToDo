@@ -1,0 +1,68 @@
+<!-- JIRA ticket management is project management tool that fixes and track issues and bugs and generates ticket for it.
+Similarly we will also generate such tickets and perform CRUD operstions on it.And make it responsive -->
+<!-- whwn ctrl+enter is clicked it will generate new ticket and by default
+color selected will be black -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ToDo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>JIRA TICKET</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Toolbox -->
+    <div class="toolbox-cont">
+        <div class="toolbox-priority-container">
+            <div class="lightpink color"></div>
+            <div class="lightblue color"></div>
+            <div class="lightgreen color"></div>
+            <div class="black color"></div>
+        </div>
+        <div class="action-btn-cont">
+            <div class="add-btn">
+                <!-- /* use fontawesome.com to take icons  
+                to display we attach cdn link-->
+                <i class="fa-regular fa-plus"></i>
+            </div>
+            <div class="remove-btn">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </div>
+        </div>
+    </div>
+    <!-- Main contsiner -: where all tickets will be collected -->
+    <div class="main-ctn">
+        <!-- ticket structure -> 1.tag(color) 2.id 3.rough space 4.lock/unlock -->
+        <!-- <div class="ticket-cont">
+            <div class="ticket-color"></div>
+            <div class="ticket-id">Unique id</div>
+            <div class="task-area">DEFAULT TICKET</div>
+            <div class="ticket-lock">
+                <i class="fa-solid fa-lock"></i>
+                <!-- image taken from fontawesome and added cdn link to access -->
+            <!-- </div> -->
+        <!-- </div>  -->
+    </div>
+    <!-- Modal display -->
+    <div class="modal-cont">
+        <textarea spellcheck="false" class="textarea-cont" placeholder="Enter your task here :)"></textarea>
+        <div class="priority-colors-cont">
+            <div class="lightpink priority-color"></div>
+            <div class="lightblue priority-color"></div>
+            <div class="lightgreen priority-color"></div>
+            <div class="black priority-color border"></div>
+            <!-- border class in black to make default priority
+            color set as black -->
+        </div>
+    </div>
+    <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+    <!-- adding script above ensures by default access of func. in src -->
+    <script src="./ToDo.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+*{
+    /* it selects all elemnt */
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    /* background-color: blueviolet; */
+    background-color: #D6A2E8;
+}
+.toolbox-cont{
+    height: 5em;
+/*no width as div is block level
+element so it takes whole row  */
+    background-color: #82589F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.toolbox-priority-container{
+    height: 3rem;
+    width: 16rem;
+    background-color: #6D214F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     /* to give curvy effect */
+     border-radius: 10px;
+}
+.action-btn-cont{
+    height: 3rem;
+    width: 8rem;
+    background-color: #6D214F;
+     /* to give curvy effect */
+     border-radius: 10px;
+     display: flex;
+}
+.action-btn-cont>*{ 
+    /*selects elem just inside action-btn element at same level */
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: aqua;
+    /* Sets the color of an element's text */
+}
+.color{
+    height: 1.5rem;
+    width: 2.5rem;
+    background-color: lightcoral;
+    /* we'll make its parent flex */
+}
+.lightpink{
+    background-color: lightpink;
+}
+.lightblue{
+    background-color: lightblue;
+}
+.lightgreen{
+    background-color: lightgreen;
+}
+.black{
+    background-color: black;
+}
+
+/* to style when it hover
+on any element */
+.action-btn-cont > *:hover{
+    background-color: limegreen;
+}
+.modal-cont{
+    height: 50vh;
+    width: 45vw;
+    background-color: lightcyan;
+    /* not margin-left in vw as it covers that area by margin and other
+    elem cannot be placed there */
+    position: absolute;
+    top: calc((100vh - 50vh) / 2);
+    /* to[: calc((100vh - box-height) / 2) */
+    left: calc((100vw - 45vw) / 2);
+    display: none;
+    /* none display as initilly its hidden and when + is clicked it makes
+    display flex of modal-cont(so inside elem of modal are flexed)*/
+    /* take box-shado from 93Beautiful CSS.com */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    /* text-shadow: */
+}
+.textarea-cont{
+    height: 100%;
+    width: 75%;
+    border: none;
+    outline: none;
+    /* so that on cliking textarea border not come */
+    resize: none;
+    background-color: lightslategray;
+    /* to not start text from corner of left */
+    padding: 2rem;
+    /* as its box-sizig so it will padding in given ht and wd */
+    font-size: 2rem;
+}
+.priority-colors-cont{
+    height: 100%;
+    width: 25%;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around ;
+    align-items: center;
+    /* as aliign-items are for column */
+    background-color: lightcyan;
+}
+.priority-color{
+    height: 2rem;
+    width: 55%;
+}
+.border{
+    border: 5px solid wheat;
+}
+.ticket-cont{
+    height: 13rem;
+    width: 17rem;
+    background-color: lightblue;
+}
+.ticket-color{
+    height: 1rem;
+    width: 100%;
+}
+.ticket-id{
+    height: 2rem;
+    background-color: #58B19F;
+    /* we'll provide padding s.t content inside div elem is somewhat far
+    from boundary of id div elem, as box-sizing so space of padding will be adjusted in given ht and wd so
+    automatically content(text) will move somewhat far from boundary */
+    padding: 0.4rem;
+}
+.task-area{
+    height: calc((100% - 1rem - 2rem - 2rem));
+    background-color: #F8EFBA;
+    padding: 00.4rem;
+    outline: none;
+    /* on clicking taskarea outline will not come */
+    font-size: 1.7rem;
+}
+.ticket-lock{
+    height: 2rem;
+    background-color: darkgrey;
+    display: flex;
+    justify-content: flex-end;
+    /* font size and color are inherited to chidren elem text also by default */
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    padding-top: 00.3rem;
+    /* padding adjust in given ht and wd so automatically content comes
+    somewhat inside */
+}
+.main-ctn{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex wrap to go in next line if filled */
+    padding: 1rem;
+    gap: 0.5rem;
+    justify-content: center;
+}
+/* here responsive in certain level only as flex display also handles many thing */
+/* //our respomsiveness is sorted for laptop. Correcting for tab and mobile */
+@media screen and (min-width: 425px) and (max-width: 768px){
+    .modal-cont{
+        width: 60vw;
+        /* to maintain center view we'll also update top and left */
+        left: calc((100vw - 60vw) / 2);
+    }
+}
+@media screen and (max-width: 426px){
+    /* means less than 426px */
+    .modal-cont{
+        width: 70vw;
+        left: calc((100vw - 70vw) / 2);
+        flex-direction: column;
+        height: 50%;
+    }
+    .textarea-cont{
+        width: 100%;
+    }
+    .priority-colors-cont{
+        flex-direction: row;
+        width: 100%;
+        height: 25%;
+    }
+    .priority-color{
+        width: 17%;
+    }
+    .action-btn-cont{
+        width: 6rem;
+    }
+}

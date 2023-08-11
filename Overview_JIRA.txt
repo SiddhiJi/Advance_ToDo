@@ -1,0 +1,33 @@
+Part2 -> ModalFunctionality ---- Priority color
+                            |--- Task(to edit in ticket text)
+                            |--- Task-id(unique) 
+      -> Set Default Modal
+      -> Ticket functionality --- priority color handle
+                              --- handle lock
+                              --- handle removal
+                              --- toolbox priority filtring of tickets
+                                  |--- click -> Filter ticket
+                                   --- doubleclick -> all tickets
+
+By clicking on cross deletion is activated
+and again by clicking its deactivate
+
+Web Storage API is provided by browser -> it is set of mechanism to provide us storage in key-value form 
+ui.e in object form.
+|----> localStorage-----:  no expiry of data  Data storage limit -> 5MB
+|----> Session Storage---: expiry(data gone when)-: Browser close , reload  DSL -: "
+
+Values will be key-value in string form......to convert object(key-value) value in string we can use JSON.stringify()
+                                             to convert string back to object we can use JSON.parse()
+JSON-> JS Object Notation -> it is standard format for data representation and is light weight. So mostly data transmit from servers 
+is in JSON format and also has good representation. In JSON key and value are in double quotes(syntax of JSON similar to JS object)
+
+We get access of Local storage through Brpwser -> Window obect(blank screen) provided by browser -> LS globally present in window object
+
+We will store data in array of objects in Local storage -> when createTicket
+                                                           modify changes in tickets object(task and color)
+
+After reloading our browser new object is created and again entire html css js execute and display accordingly, but our localStorage
+contains data as it has no expiry(but can be overridde by new data), so first we will check if our localStorage has some data
+
+Responsiveness -> so that on every device our application run smoothly. We will take help media queries(to trigger external css).
